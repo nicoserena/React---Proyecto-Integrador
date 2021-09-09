@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Tarjetas from '../Tarjetas/Tarjetas';
 
 class Musica extends Component{
     constructor(){
@@ -11,8 +12,8 @@ class Musica extends Component{
     componentDidMount(){
 
         console.log("se cargo el comp");
-        let proxy = "https://cors-anywhere.herokuapp.com/";
-        let url = proxy +'https://api.deezer.com/chart/0/tracks' 
+        let proxy = "https://thingproxy.freeboard.io/fetch/";
+        let url = proxy +'https://api.deezer.com/chart/0/tracks&top?limit=10' 
         
         
     fetch(url)
@@ -28,11 +29,22 @@ class Musica extends Component{
         }
     render(){
         return(
-            <React.Fragment>
-               {console.log(this.state.musica)} 
 
-            </React.Fragment>
+            <React.Fragment>
+            <div className="musica">                
+                { 
+                    console.log(this.state.musica),
+                    this.state.musica.map((musica, index)=><Tarjetas key={musica + index} dataMusica={musica}
+                    />) 
+                }
+            </div>
+            
+        </React.Fragment>
+
+
+
         )
+    
     }
 }
 
