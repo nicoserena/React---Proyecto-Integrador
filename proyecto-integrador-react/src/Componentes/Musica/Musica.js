@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
+<<<<<<< HEAD
 //import Loader from 'react-loader-spinner';
+=======
+/*import Loader from 'react-loader-spinner';*/
+>>>>>>> d5c541418509614c13f4b2380b1e48899c1c1218
 import Tarjetas from '../Tarjetas/Tarjetas';
 import Filtrado from '../Filtrado/Filtrado'
 
