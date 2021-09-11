@@ -27,25 +27,36 @@ class Musica extends Component{
         })
 
         }
-    render(){
-        return(
-
-            <React.Fragment>
-            <div className="musica">                
-                { 
-                    console.log(this.state.musica),
-                    this.state.musica.map((musica, index)=><Tarjetas key={musica + index} dataMusica={musica}
-                    />) 
-                }
-            </div>
-            
-        </React.Fragment>
 
 
+        borrarTarjeta(id){
+            let cancionesQuedan = this.state.musica.filter(musica =>{
+                return musica.id !== id
+            })
+            this.setState({
+                musica: cancionesQuedan
+            })
+        }
+        
+        render(){
+            return(
 
-        )
-    
-    }
+                <React.Fragment>
+                <div className="musica card-conteiner">                
+                    { 
+                        console.log(this.state.musica),
+                        this.state.musica.map((musica, index)=><Tarjetas key={musica + index} dataMusica={musica}
+                        borrar = {(idEliminar) => this.borrarTarjeta(idEliminar)} />) 
+                    }
+                </div>
+                
+            </React.Fragment>
+
+
+
+            )
+        
+        }
 }
 
 export default Musica

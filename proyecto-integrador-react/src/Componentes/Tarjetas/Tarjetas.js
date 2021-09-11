@@ -28,14 +28,16 @@ class Tarjetas extends Component{
         return(
             <React.Fragment>
                 
-                <section class="card-container">
+                <section class="card-container character-card">
                     <article>
                         <section class="navigation">
                             <div>
                                 <i class="fas fa-chevron-left"></i>
                                 <i class="fas fa-chevron-right"></i>
                             </div>
-                            <i class="far fa-window-close"></i>
+                            <i class="far fa-window-close" onClick={()=> this.props.borrar(this.props.dataMusica.id)}></i>
+                            
+
                         </section>
                         <main>
                             <img src={this.props.dataMusica.album.cover_medium} alt=""/>
