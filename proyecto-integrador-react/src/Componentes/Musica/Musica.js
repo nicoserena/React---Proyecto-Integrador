@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Loader from 'react-loader-spinner';
 import Tarjetas from '../Tarjetas/Tarjetas';
 
 class Musica extends Component{
@@ -43,10 +44,8 @@ class Musica extends Component{
 
                 <React.Fragment>
                 <div className="musica card-conteiner">                
-                    {   this.state.personajes.length === 0 ?
-                        <Spinner animation="border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                        </Spinner> :
+                    {   //this.state.personajes.length === 0 ?
+                        //<Loader></Loader> :
                         console.log(this.state.musica),
                         this.state.musica.map((musica, index)=><Tarjetas key={musica + index} dataMusica={musica}
                         borrar = {(idEliminar) => this.borrarTarjeta(idEliminar)} />) 
