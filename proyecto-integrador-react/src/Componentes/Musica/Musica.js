@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Loader from 'react-loader-spinner';
+/*import Loader from 'react-loader-spinner';*/
 import Tarjetas from '../Tarjetas/Tarjetas';
 
 class Musica extends Component{
