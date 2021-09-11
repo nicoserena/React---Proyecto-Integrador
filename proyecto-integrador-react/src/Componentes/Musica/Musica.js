@@ -1,9 +1,4 @@
 import React, {Component} from 'react';
-<<<<<<< HEAD
-//import Loader from 'react-loader-spinner';
-=======
-/*import Loader from 'react-loader-spinner';*/
->>>>>>> d5c541418509614c13f4b2380b1e48899c1c1218
 import Tarjetas from '../Tarjetas/Tarjetas';
 import Filtrado from '../Filtrado/Filtrado'
 
@@ -35,6 +30,18 @@ class Musica extends Component{
 
         }
 
+        masPersonajes(){
+            let url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=20"
+            fetch(url)
+            .then(respuesta =>{
+                return respuesta.json()
+            })
+            .then((datos)=>{
+                this.setState({
+                    musica: this.state.musica.concat(datos.data),
+                })
+            })
+        }
 
         borrarTarjeta(id){
             let cancionesQuedan = this.state.musica.filter(musica =>{
@@ -69,7 +76,8 @@ class Musica extends Component{
                         borrar = {(idEliminar) => this.borrarTarjeta(idEliminar)} />) 
                     }
                 </div>
-                
+                <button onClick={() => this.masPersonajes()} >Más personajes</button>
+ 
             </React.Fragment>
 
 
