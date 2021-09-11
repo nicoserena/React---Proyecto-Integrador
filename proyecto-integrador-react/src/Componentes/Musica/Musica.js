@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
-import Loader from 'react-loader-spinner';
+//import Loader from 'react-loader-spinner';
 import Tarjetas from '../Tarjetas/Tarjetas';
+import Filtrado from '../Filtrado/Filtrado'
 
 class Musica extends Component{
     constructor(){
         super();
         this.state = {
             musica:[],
-            
+            cancionesIniciales:[],
         }
     }
     componentDidMount(){
@@ -23,7 +24,8 @@ class Musica extends Component{
         })
         .then((datos) => { 
             this.setState({
-                musica: datos.data
+                musica: datos.data,
+                cancionesIniciales: datos.data
             })
         })
 
@@ -39,10 +41,22 @@ class Musica extends Component{
             })
         }
         
+        filtrarPersonajes(textoAFiltrar){
+            let cancionesFiltradas = this.state.cancionesIniciales.filter(musica =>{
+                return musica.title.toLowerCase().includes(textoAFiltrar.toLowerCase()) 
+            } )
+            this.setState({
+                musica : cancionesFiltradas
+            })
+        }
+
         render(){
             return(
 
                 <React.Fragment>
+                  <div>
+                    <Filtrado filtrarPersonajes = { (texto) => this.filtrarPersonajes(texto) } />
+                </div> 
                 <div className="musica card-conteiner">                
                     {   //this.state.personajes.length === 0 ?
                         //<Loader></Loader> :
