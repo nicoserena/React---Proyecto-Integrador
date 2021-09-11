@@ -43,7 +43,10 @@ class Musica extends Component{
 
                 <React.Fragment>
                 <div className="musica card-conteiner">                
-                    { 
+                    {   this.state.personajes.length === 0 ?
+                        <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                        </Spinner> :
                         console.log(this.state.musica),
                         this.state.musica.map((musica, index)=><Tarjetas key={musica + index} dataMusica={musica}
                         borrar = {(idEliminar) => this.borrarTarjeta(idEliminar)} />) 
