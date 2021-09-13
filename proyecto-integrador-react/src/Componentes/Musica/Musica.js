@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Tarjetas from '../Tarjetas/Tarjetas';
 import Filtrado from '../Filtrado/Filtrado'
+import './musica.css'
 
 class Musica extends Component{
     constructor(){
@@ -14,7 +15,7 @@ class Musica extends Component{
 
         console.log("se cargo el comp");
         let proxy = "https://thingproxy.freeboard.io/fetch/";
-        let url = proxy +'https://api.deezer.com/chart/0/tracks&top?limit=10' 
+        let url = proxy +'https://api.deezer.com/chart/0/tracks&top?limit=12' 
         
         
     fetch(url)
@@ -31,7 +32,7 @@ class Musica extends Component{
         }
 
         masPersonajes(){
-            let url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=20"
+            let url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=12"
             fetch(url)
             .then(respuesta =>{
                 return respuesta.json()
