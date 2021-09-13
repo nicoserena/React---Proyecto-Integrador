@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Filtrado.css'
 
 class Filtrado extends Component{
     constructor(props){
@@ -20,7 +21,7 @@ class Filtrado extends Component{
     render(){
         return(
             <React.Fragment>
-                <form onSubmit = {(e) => this.evitarEnviar(e) }>
+                <form className='a' onSubmit = {(e) => this.evitarEnviar(e) }>
                     <label for='nombre'>Canciones a filtrar:</label>
                     <input  type='text' name='nombre'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={this.state.filtrarPor } />
                 </form>

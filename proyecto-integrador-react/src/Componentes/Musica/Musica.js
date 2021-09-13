@@ -78,7 +78,7 @@ class Musica extends Component{
                         borrar = {(idEliminar) => this.borrarTarjeta(idEliminar)} />) 
                     }
                 </div>
-                <button onClick={() => this.masCanciones()} >Más canciones</button>
+                <button className='but' onClick={() => this.masCanciones()} >Más canciones</button>
  
             </React.Fragment>
 

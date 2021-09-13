@@ -31,11 +31,8 @@ class Tarjetas extends Component{
                 <section class="card-container character-card">
                     <article>
                         <section class="navigation">
-                            <div>
-                                <i class="fas fa-chevron-left"></i>
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                            <i class="far fa-window-close" onClick={()=> this.props.borrar(this.props.dataMusica.id)}></i>
+                        
+                            <i class="far fa-window-close"  onClick={()=> this.props.borrar(this.props.dataMusica.id)}></i>
                             
 
                         </section>
@@ -48,7 +45,7 @@ class Tarjetas extends Component{
                             </section>
                             <p className={` ${this.state.viewMore ? 'show' : 'hide'}`}>
                             <p>Album: {this.props.dataMusica.album.title}</p>
-                                <p>Esta canción tiene una duración de: {this.props.dataMusica.duration} segundos</p>
+                                <p>Esta canción tiene una duración de: {this.props.dataMusica.duration} minutos</p>
                                 <p>Se encuentra en el número {this.props.dataMusica.position} de las más escuchadas</p>
                             </p>
                             <button className='mas' onClick={()=>this.viewMore()}>{this.state.text}</button>

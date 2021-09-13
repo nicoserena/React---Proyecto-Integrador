@@ -2,10 +2,25 @@
     padding: 10px;
     margin-bottom: 20px;
     width: 24%;
-    background: #fff;
+    background-color: #e7eff9;
+background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
     border-radius: 5px;
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+    font-family: 'Righteous', cursive;
 }
+.mas{
+    background-color: #4c77af; /* Green */
+  border: none;
+  color: white;
+  font-family: 'Righteous', cursive;
+  padding: 15px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 5px;  
+}
+
 
 .hide{
     display: none;
