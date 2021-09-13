@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Tarjetas from '../Tarjetas/Tarjetas';
-import Filtrado from '../Filtrado/Filtrado'
-import './musica.css'
+import Filtrado from '../Filtrado/Filtrado';
+import './musica.css';
 
 class Musica extends Component{
     constructor(){
@@ -53,9 +53,9 @@ class Musica extends Component{
             })
         }
         
-        filtrarPersonajes(textoAFiltrar){
+        filtrarCanciones(cancionAFiltrar){
             let cancionesFiltradas = this.state.cancionesIniciales.filter(musica =>{
-                return musica.title.toLowerCase().includes(textoAFiltrar.toLowerCase()) 
+                return musica.title.toLowerCase().includes(cancionAFiltrar.toLowerCase()) 
             } )
             this.setState({
                 musica : cancionesFiltradas
@@ -67,17 +67,18 @@ class Musica extends Component{
 
                 <React.Fragment>
                   <div>
-                    <Filtrado filtrarPersonajes = { (texto) => this.filtrarPersonajes(texto) } />
+                    <Filtrado filtrarCanciones = { (cancion) => this.filtrarCanciones(cancion) } />
                 </div> 
                 <div className="musica card-conteiner">                
-                    {   //this.state.personajes.length === 0 ?
-                        //<Loader></Loader> :
+                    {   
+                        this.state.musica.length === 0 ?
+                        <p>Cargando canciones...</p> :
                         console.log(this.state.musica),
                         this.state.musica.map((musica, index)=><Tarjetas key={musica + index} dataMusica={musica}
                         borrar = {(idEliminar) => this.borrarTarjeta(idEliminar)} />) 
                     }
                 </div>
-                <button onClick={() => this.masPersonajes()} >Más personajes</button>
+                <button onClick={() => this.masCanciones()} >Más canciones</button>
  
             </React.Fragment>
 
@@ -88,6 +89,6 @@ class Musica extends Component{
         }
 }
 
-export default Musica
+export default Musica;
 
 

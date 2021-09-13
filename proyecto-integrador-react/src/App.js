@@ -1,13 +1,14 @@
 import './App.css';
-import Musica from './Componentes/Musica/Musica'
+import Musica from './Componentes/Musica/Musica';
 import Navbar from './Componentes/Nav/Nav';
-import Footer from './Componentes/Footer/Footer'
+import Footer from './Componentes/Footer/Footer';
+
 function App() {
   return (
     <div className="App">
       
-        <Navbar/>
-         <Musica />
+        <Navbar />
+        <Musica />
         <Footer />
       
     </div>

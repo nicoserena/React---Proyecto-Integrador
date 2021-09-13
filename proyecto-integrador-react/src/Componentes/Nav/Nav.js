@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './Nav.css';
-import Filtrado from '../Filtrado/Filtrado'
 
 class Navbar extends Component{
     constructor(){
@@ -13,9 +12,8 @@ class Navbar extends Component{
         return(
             <React.Fragment>
                 <header className='encabezado bg-success text-white p-2 '>
-                        <h1>Aplicación de musica</h1>
+                        <h1>RKT</h1>
                         <section className='opciones'>
-                            <p>Ordenar ASC/ DESC</p>
                             <i className="fas fa-th"></i>
                             <i className="fas fa-align-justify"></i>
                          

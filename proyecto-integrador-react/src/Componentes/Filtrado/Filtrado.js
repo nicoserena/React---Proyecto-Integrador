@@ -15,13 +15,13 @@ class Filtrado extends Component{
     controlarCambios(evento){
         this.setState({
             filtrarPor : evento.target.value
-        }, () => this.props.filtrarPersonajes(this.state.filtrarPor))
+        }, () => this.props.filtrarCanciones(this.state.filtrarPor))
     }
     render(){
         return(
             <React.Fragment>
                 <form onSubmit = {(e) => this.evitarEnviar(e) }>
-                    <label for='nombre'>Personajes a filtrar..:</label>
+                    <label for='nombre'>Canciones a filtrar:</label>
                     <input  type='text' name='nombre'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={this.state.filtrarPor } />
                 </form>
             </React.Fragment>
