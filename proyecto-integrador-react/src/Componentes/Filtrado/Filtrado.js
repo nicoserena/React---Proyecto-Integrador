@@ -22,8 +22,8 @@ class Filtrado extends Component{
         return(
             <React.Fragment>
                 <form className='a' onSubmit = {(e) => this.evitarEnviar(e) }>
-                    <label for='nombre'>Canciones a filtrar:</label>
-                    <input  type='text' name='nombre'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={this.state.filtrarPor } />
+                    <label for='nombre'>Filtrar por nombre:</label>
+                    <input className="search" type='text' name='nombre'  id='nombre' onChange= {(e) => this.controlarCambios(e) } value={this.state.filtrarPor } />
                 </form>
             </React.Fragment>
         )

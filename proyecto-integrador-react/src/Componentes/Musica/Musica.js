@@ -9,13 +9,14 @@ class Musica extends Component{
         this.state = {
             musica:[],
             cancionesIniciales:[],
+            valor: 12
         }
     }
     componentDidMount(){
 
         console.log("se cargo el comp");
         let proxy = "https://thingproxy.freeboard.io/fetch/";
-        let url = proxy +'https://api.deezer.com/chart/0/tracks&top?limit=12' 
+        let url = proxy +'https://api.deezer.com/chart/0/tracks&top?limit=' + this.state.valor 
         
         
     fetch(url)
@@ -32,14 +33,15 @@ class Musica extends Component{
         }
 
         masCanciones(){
-            let url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=12"
+            let url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=" + this.state.valor
             fetch(url)
             .then(respuesta =>{
                 return respuesta.json()
             })
             .then((datos)=>{
                 this.setState({
-                    musica: this.state.musica.concat(datos.data),
+                    musica: datos.data,
+                    valor: this.state.valor + 12
                 })
             })
         }

@@ -6,7 +6,7 @@ function Footer(){
     return(
         <React.Fragment>
             <footer>
-                <ul className="team bg-success">
+                <ul className="team">
                     <li>Agustín Lerej</li>
                     <li>Nicolás Serena Olivera</li>
                     <li>Gonzalo Ocampos</li>
