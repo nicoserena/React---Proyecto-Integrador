@@ -39,7 +39,7 @@ class Tarjetas extends Component{
                         <main>
                             <img src={this.props.dataMusica.album.cover_medium} alt=""/>
                             <h3>{this.props.dataMusica.title}</h3>
-                            <p class="description">Esta es una canción de {this.props.dataMusica.artist.name} </p>
+                            <p class="description">{this.props.dataMusica.artist.name} </p>
                             <section class="aditional-info">
                                 
                             </section>
