@@ -31,7 +31,7 @@ class Musica extends Component{
 
         }
 
-        masPersonajes(){
+        masCanciones(){
             let url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=12"
             fetch(url)
             .then(respuesta =>{
