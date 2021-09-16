@@ -9,7 +9,9 @@ class Musica extends Component{
         this.state = {
             musica:[],
             cancionesIniciales:[],
-            valor: 12
+            valor: 12,
+            viewMore: 'musica-r',
+            
         }
     }
     componentDidMount(){
@@ -63,22 +65,35 @@ class Musica extends Component{
                 musica : cancionesFiltradas
             })
         }
-
+        viewMore(orientacion){
+                this.setState({
+                    viewMore: orientacion
+                })              
+        }
+    
         render(){
             return(
 
                 <React.Fragment>
-                  <div>
+                  <div className='subheader'>
                     <Filtrado filtrarCanciones = { (cancion) => this.filtrarCanciones(cancion) } />
+                    <section className='opciones'>
+                
+                            <i className="fas fa-th" onClick= { ()=> this.viewMore('musica-r')}></i>
+                            <i className="fas fa-align-justify" onClick= { ()=> this.viewMore('musica-c')}></i>
+                   
+                        </section>
                 </div> 
-                <div className="musica card-conteiner">                
+                <div className={` ${this.state.viewMore} card-conteiner`}>                
                     {   
                         this.state.musica.length === 0 ?
                         <p>Cargando canciones...</p> :
                         this.state.musica.map((musica, index)=><Tarjetas key={musica + index} dataMusica={musica}
                         borrar = {(idEliminar) => this.borrarTarjeta(idEliminar)} />) 
                     }
+                    
                 </div>
+            
                 <button className='but' onClick={() => this.masCanciones()} >Más canciones</button>
  
             </React.Fragment>

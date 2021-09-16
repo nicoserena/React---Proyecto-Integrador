@@ -13,11 +13,7 @@ class Navbar extends Component{
             <React.Fragment>
                 <header className='encabezado bg-success text-white p-2 '>
                         <h1 className='rkt'>RKT</h1>
-                        <section className='opciones'>
-                            <i className="fas fa-th"></i>
-                            <i className="fas fa-align-justify"></i>
-                         
-                        </section>
+                      
                 </header>
             </React.Fragment>
         )

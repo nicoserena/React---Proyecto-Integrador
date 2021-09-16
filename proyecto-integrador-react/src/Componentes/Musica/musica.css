@@ -1,10 +1,20 @@
-.musica{
+.musica-r{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
 }
+.musica-c{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  align-items: center;
+   
+
+}
+
 .but{
   background-color: #4c77af; /* Green */
   border: none;
@@ -17,4 +27,15 @@
   display: inline-block;
   font-size: 25px;
   border-radius: 5px;
+}
+.subheader{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: flex-start;  
+}
+
+.opciones{
+    
 }

@@ -27,7 +27,9 @@ class Tarjetas extends Component{
     render(){
         return(
             <React.Fragment>
-                
+                  
+
+
                 <section class="card-container character-card">
                     <article>
                         <section class="navigation">
