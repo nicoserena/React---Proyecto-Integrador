@@ -75,7 +75,6 @@ class Musica extends Component{
                     {   
                         this.state.musica.length === 0 ?
                         <p>Cargando canciones...</p> :
-                        console.log(this.state.musica),
                         this.state.musica.map((musica, index)=><Tarjetas key={musica + index} dataMusica={musica}
                         borrar = {(idEliminar) => this.borrarTarjeta(idEliminar)} />) 
                     }
