@@ -20,7 +20,7 @@ class Tarjetas extends Component{
         } else {
             this.setState({
                 viewMore: true,
-                text: 'ver menos'
+                text: 'Ver menos'
             })            
         }
     }
@@ -45,9 +45,9 @@ class Tarjetas extends Component{
                             </section>
                             <p className={` ${this.state.viewMore ? 'show' : 'hide'}`}>
                                 {this.props.dataMusica.duration = Math.floor(this.props.dataMusica.duration/60)}
-                            <p>Album: {this.props.dataMusica.album.title}</p>
+                            <p>Álbum: {this.props.dataMusica.album.title}</p>
                             <p>Esta canción tiene una duración de: {this.props.dataMusica.duration} minutos</p>
-                            <p>Se encuentra en el número {this.props.dataMusica.position} de las más escuchadas</p>
+                            <p>Se encuentra en el número {this.props.dataMusica.position} de los más escuchadas</p>
                             </p>
                             <button className='mas' onClick={()=>this.viewMore()}>{this.state.text}</button>
                         
