@@ -84,7 +84,7 @@ class Musica extends Component{
                    
                         </section>
                 </div> 
-                <div className={` ${this.state.viewMore} card-conteiner`}>                
+                <div className={` ${this.state.flex} card-conteiner`}>                
                     {   
                         this.state.musica.length === 0 ?
                         <p>Cargando canciones...</p> :
