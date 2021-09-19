@@ -10,7 +10,7 @@ class Musica extends Component{
             musica:[],
             cancionesIniciales:[],
             valor: 12,
-            viewMore: 'musica-r',
+            flex: 'musica-r',
             
         }
     }
@@ -65,9 +65,9 @@ class Musica extends Component{
                 musica : cancionesFiltradas
             })
         }
-        viewMore(orientacion){
+        cambiarOrientacion(orientacion){
                 this.setState({
-                    viewMore: orientacion
+                    flex: orientacion
                 })              
         }
     
@@ -79,8 +79,8 @@ class Musica extends Component{
                     <Filtrado filtrarCanciones = { (cancion) => this.filtrarCanciones(cancion) } />
                     <section className='opciones'>
                 
-                            <i className="fas fa-th" onClick= { ()=> this.viewMore('musica-r')}></i>
-                            <i className="fas fa-align-justify" onClick= { ()=> this.viewMore('musica-c')}></i>
+                            <i className="fas fa-th" onClick= { ()=> this.cambiarOrientacion('musica-r')}></i>
+                            <i className="fas fa-align-justify" onClick= { ()=> this.cambiarOrientacion('musica-c')}></i>
                    
                         </section>
                 </div> 
