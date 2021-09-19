@@ -39,3 +39,20 @@
 .opciones{
     
 }
+
+@media(max-width: 320px){
+    .musica-r{
+        display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  align-items: center;
+    }
+    .but{
+        width: 150px;
+        font-size: 14px;
+    }
+    .fas{
+        display: none;
+    }
+}

@@ -15,3 +15,9 @@
     font-family: 'Righteous', cursive;
     font-size: 40px;
 }
+
+@media(max-width: 320px){
+    .rkt{
+        margin-left: 115px;
+    }
+}
