@@ -5,29 +5,29 @@
     justify-content: space-around;
     align-items: flex-start;
 }
+
 .musica-c{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-  align-items: center;
-   
-
+    align-items: center;
 }
 
 .but{
-  background-color: #4c77af; /* Green */
-  border: none;
-  color: white;
-  font-family: 'Righteous', cursive;
-  padding: 15px 16px;
-  width: 350px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 25px;
-  border-radius: 5px;
+    background-color: #4c77af; /* Green */
+    border: none;
+    color: white;
+    font-family: 'Righteous', cursive;
+    padding: 15px 16px;
+    width: 350px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    border-radius: 5px;
 }
+
 .subheader{
     display: flex;
     flex-wrap: wrap;
@@ -36,22 +36,20 @@
     align-items: flex-start;  
 }
 
-.opciones{
-    
-}
-
 @media(max-width: 320px){
     .musica-r{
         display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-  align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+
     .but{
         width: 150px;
         font-size: 14px;
     }
+    
     .fas{
         display: none;
     }

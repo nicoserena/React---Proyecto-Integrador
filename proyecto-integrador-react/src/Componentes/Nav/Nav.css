@@ -4,12 +4,14 @@
     align-items: center;
     
 }
+
 .opciones{
     display: flex;
     margin-right: 65px;
     font-size: xx-large;
     gap:10px;
 }
+
 .rkt{
     margin-left: 60px;
     font-family: 'Righteous', cursive;

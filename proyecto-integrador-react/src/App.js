@@ -6,11 +6,9 @@ import Footer from './Componentes/Footer/Footer';
 function App() {
   return (
     <div className="App">
-      
         <Navbar />
         <Musica />
         <Footer />
-      
     </div>
   );
 }

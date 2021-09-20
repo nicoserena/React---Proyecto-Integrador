@@ -21,68 +21,65 @@ class Musica extends Component{
         let url = proxy +'https://api.deezer.com/chart/0/tracks&top?limit=' + this.state.valor 
         
         
-    fetch(url)
-        .then(respuesta =>{
-            return respuesta.json()
-        })
-        .then((datos) => { 
-            this.setState({
-                musica: datos.data,
-                cancionesIniciales: datos.data
-            })
-        })
-
-        }
-
-        masCanciones(){
-            let url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=" + this.state.valor
-            fetch(url)
+        fetch(url)
             .then(respuesta =>{
                 return respuesta.json()
             })
-            .then((datos)=>{
+            .then((datos) => { 
                 this.setState({
                     musica: datos.data,
-                    valor: this.state.valor + 12
+                    cancionesIniciales: datos.data
                 })
             })
-        }
+    }
 
-        borrarTarjeta(id){
-            let cancionesQuedan = this.state.musica.filter(musica =>{
-                return musica.id !== id
-            })
+    masCanciones(){
+        let url = "https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=" + this.state.valor
+        fetch(url)
+        .then(respuesta =>{
+            return respuesta.json()
+        })
+        .then((datos)=>{
             this.setState({
-                musica: cancionesQuedan
+                musica: datos.data,
+                valor: this.state.valor + 12
             })
-        }
-        
-        filtrarCanciones(cancionAFiltrar){
-            let cancionesFiltradas = this.state.cancionesIniciales.filter(musica =>{
-                return musica.title.toLowerCase().includes(cancionAFiltrar.toLowerCase()) 
-            } )
-            this.setState({
-                musica : cancionesFiltradas
-            })
-        }
-        cambiarOrientacion(orientacion){
-                this.setState({
-                    flex: orientacion
-                })              
-        }
+        })
+    }
+
+    borrarTarjeta(id){
+        let cancionesQuedan = this.state.musica.filter(musica =>{
+            return musica.id !== id
+        })
+        this.setState({
+            musica: cancionesQuedan
+        })
+    }
     
-        render(){
-            return(
+    filtrarCanciones(cancionAFiltrar){
+        let cancionesFiltradas = this.state.cancionesIniciales.filter(a =>{
+            return a.title.toLowerCase().includes(cancionAFiltrar.toLowerCase()) 
+        })
+        this.setState({
+            musica : cancionesFiltradas
+        })
+    }
 
-                <React.Fragment>
-                  <div className='subheader'>
+    cambiarOrientacion(orientacion){
+        this.setState({
+            flex: orientacion
+        })              
+    }
+    
+    render(){
+        return(
+            <React.Fragment>
+                <div className='subheader'>
                     <Filtrado filtrarCanciones = { (cancion) => this.filtrarCanciones(cancion) } />
                     <section className='opciones'>
-                
-                            <i className="fas fa-th" onClick= { ()=> this.cambiarOrientacion('musica-r')}></i>
-                            <i className="fas fa-align-justify" onClick= { ()=> this.cambiarOrientacion('musica-c')}></i>
-                   
-                        </section>
+                        <i className="fas fa-th" onClick= { ()=> this.cambiarOrientacion('musica-r')}></i>
+                        <i className="fas fa-align-justify" onClick= { ()=> this.cambiarOrientacion('musica-c')}></i>
+                    </section>
                 </div> 
                 <div className={` ${this.state.flex} card-conteiner`}>                
                     {   
@@ -91,18 +88,11 @@ class Musica extends Component{
                         this.state.musica.map((musica, index)=><Tarjetas key={musica + index} dataMusica={musica}
                         borrar = {(idEliminar) => this.borrarTarjeta(idEliminar)} />) 
                     }
-                    
                 </div>
-            
                 <button className='but' onClick={() => this.masCanciones()} >Más canciones</button>
- 
             </React.Fragment>
-
-
-
-            )
-        
-        }
+        )
+    }
 }
 
 export default Musica;
